@@ -1,6 +1,6 @@
 # STMAE
 ## A Spatiotemporal Mask Autoencoder for One-shot Video Object Segmentation
-[Baiyu Chen](supgb.github.io) $^1$, Li Zhao $^1$, Sixian Chan $^2$
+[Baiyu Chen](https://supgb.github.io) $^1$, Li Zhao $^1$, Sixian Chan $^2$
 
 $^1$ Key Laboratory of Intelligent Informatics for Safety & Emergency of Zhejiang Province, Wenzhou University<br>
 $^2$ The College of Computer Science and Technology, Zhejiang University of Technology
