@@ -26,7 +26,7 @@ The above figure depicts the structure of STMAE, consisting of a key encoder and
 The above figure illustrates the simple idea of the One-shot Training strategy. A forward reconstruction operation is first taken to obtain the predictions of subsquent frames under the *stop gradient* setting, and with gradients being calculated a backward reconstruction operation is used to rebuild the first frame mask by using predictions of subsquent frames.
 
 ## Results
-$^\dag$ *The results here are improved caused we've updated our implementation.*
+$^*$ *The results here are improved caused we've updated our implementation.*
 
 TBD
 
