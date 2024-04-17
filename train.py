@@ -247,7 +247,6 @@ for si, stage in enumerate(stages_to_perform):
                 total_iter += 1
                 if model._do_log:
                     model.train_integrator.add_dict(out['losses'])
-                    break
             duration = time.time() - model.last_time
                     
             model.scheduler.step()
