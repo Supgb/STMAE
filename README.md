@@ -1,11 +1,17 @@
 # STMAE
 ## A Spatiotemporal Mask Autoencoder for One-shot Video Object Segmentation
-[Baiyu Chen](supgb.github.io) $^1$, Li Zhao $^1$, Sixian Chan $^2$
+[Baiyu Chen](https://supgb.github.io) $^1$, Li Zhao $^1$, Sixian Chan $^2$
 
 $^1$ Key Laboratory of Intelligent Informatics for Safety & Emergency of Zhejiang Province, Wenzhou University<br>
 $^2$ The College of Computer Science and Technology, Zhejiang University of Technology
 
 [FAIML 2024](www.faiml.org)
+
+## DEMO  
+<div style="display: flex; justify-content: space-between;">
+    <img src="docs/dogs-jump.gif" width="49%" />
+    <img src="docs/skate.gif" width="49%" />
+</div>
 
 ## Features
 - A label-efficient VOS network based on autoencoding.
@@ -31,12 +37,12 @@ $^*$ *The results here are improved caused we've updated our implementation.*
 
 | Dataset |  J&F | J | F | Label % | Train on
 | --- | :--:|:--:|:---:|:---:|:---:|
-| DAVIS 2016 val. | 91.7 | 90.4 | 93.0 | 3.5 | DAVIS 2017 + YouTube-VOS 2018 |
-| DAVIS 2017 val. | 85.3 | 82.0 | 88.6 | 3.5 | DAVIS 2017 + YouTube-VOS 2018 |
+| DAVIS 2016 val. | 87.3 | 87.2 | 87.5 | 3.5 | DAVIS 2017 + YouTube-VOS 2018 |
+| DAVIS 2017 val. | 79.6 | 76.7 | 82.5 | 3.5 | DAVIS 2017 + YouTube-VOS 2018 |
 
 | Dataset | Overall Score | J-Seen | F-Seen | J-Unseen | F-Unseen | Label % | Train on
 | --- | :--:|:--:|:---:|:---:|:---:|:---:|:---:|
-| YouTubeVOS 18 val. | 84.3 | 83.2 | 87.9 | 79.0 | 87.2 | 3.5 % | DAVIS 2017 + YouTube-VOS 2018 |
+| YouTubeVOS 18 val. | 71.8 | 75.7 | 79.6 | 62.2 | 69.7 | 3.5 % | DAVIS 2017 + YouTube-VOS 2018 |
 
 ## Getting Started
 To reproduce our results, you can either train the model following [Training](#training) or evaluate our [pretrained model](https://github.com/Supgb/STMAE/releases/tag/v1.0) following the instruction in [Inference](#inference). Before you start, the experiments environment can be configured using `conda` and `pip`.
@@ -94,7 +100,12 @@ torchrun --nnodes=1 --nproc_per_node=4 --rdzv_id=100 --rdzv_backend=c10d --rdzv_
 If you prefer a pretrained model for fine-tuning, please use the flag `--load_network` followed by the `path-to-the-pretrained-model`
 
 ## Inference
-TBD
+To evaluate the trained model on DAVIS 2016/2017 or YouTube-VOS 2018/2019, the model should first inference on the dataset. Next, the qualitation results can be obtained by following the corresponding evaluation instructions of datasets, *i.e.,* [vos-benchmark](https://github.com/hkchengrex/vos-benchmark) for DAVIS dataset or evaluation servers for YouTube-VOS ([2018 CondaLab](https://competitions.codalab.org/competitions/19544#results) & [2019 CondaLab](https://competitions.codalab.org/competitions/20127#participate-submit_results)).
+
+Given a model, the inference command is following:
+```bash
+python eval.py --model [path-to-model] --output outputs/[d16/d17/y18/y19] --dataset [D16/D17/Y18/Y19]
+```
 
 ## Citation
 TBD
