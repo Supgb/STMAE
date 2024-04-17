@@ -29,10 +29,10 @@ $^2$ The College of Computer Science and Technology, Zhejiang University of Tech
 1. [Citation](#citation)
 
 ## Introduction
-![STMAE](docs/stmae_method.png)
+![STMAE](docs/stmae_method.svg)
 The above figure depicts the structure of STMAE, consisting of a key encoder and a mask autoencoder (mask encoder & decoder). The key encoder captures the spatiotemporal correspondences between reference frames and the query frame, and aggregates a coarse mask for the query frame according to the captured correspondences. Next, the mask autoencoder is responsible for reconstruct a clear prediction mask from the coarse one.
 
-![One-shot Training](docs/stmae_idea.png)
+![One-shot Training](docs/stmae_idea.svg)
 The above figure illustrates the simple idea of the One-shot Training strategy. A forward reconstruction operation is first taken to obtain the predictions of subsquent frames under the *stop gradient* setting, and with gradients being calculated a backward reconstruction operation is used to rebuild the first frame mask by using predictions of subsquent frames.
 
 ## Results
