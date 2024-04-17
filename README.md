@@ -1,3 +1,6 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Framework](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?&logo=PyTorch&logoColor=white)](https://pytorch.org/)
+
 # STMAE
 ## A Spatiotemporal Mask Autoencoder for One-shot Video Object Segmentation
 [Baiyu Chen](https://supgb.github.io) $^1$, Li Zhao $^1$, Sixian Chan $^2$
@@ -9,8 +12,8 @@ $^2$ The College of Computer Science and Technology, Zhejiang University of Tech
 
 ## DEMO  
 <div style="display: flex; justify-content: space-between;">
-    <img src="docs/dogs-jump.gif" width="49%" />
-    <img src="docs/skate.gif" width="49%" />
+    <img src="docs/dogs-jump.gif" width="49%" loop=infinite />
+    <img src="docs/skate.gif" width="49%" loop=infinite />
 </div>
 
 ## Features
