@@ -10,7 +10,7 @@ $^2$ The College of Computer Science and Technology, Zhejiang University of Tech
 
 [FAIML 2024](www.faiml.org)
 
-## DEMO  
+## Demo  
 <div style="display: flex; justify-content: space-between;">
     <img src="docs/dogs-jump.gif" width="49%" loop=infinite />
     <img src="docs/skate.gif" width="49%" loop=infinite />
@@ -95,6 +95,15 @@ If datasets are already in your machine, you should use softlink (`ln -s`) to or
     │   └── valid_all_frames
     └── valid
 ```
+### Neptune configuration
+We provide code to visualize the training and evaluation on the [Neptune](https://neptune.ai/) platform. Please refer the official instructions for details. After you have your Neptune account, you should create an environment file `.env.train` under the root of STMAE for the training environment. It should contain the `NEPTUNE_PROJ_NAME` and `NEPTUNE_TOKEN` variables and their value can be obtained from your Neptune account. 
+
+Create the `.env.train`, and put these lines in:
+```bash
+NEPTUNE_PROJ_NAME=[your_account_name/your_project_name]
+NEPTUNE_TOKEN=[your_project_token]
+```
+
 ## Training
 Our experiments are conducted using a batch size of 32 with 4 NVIDIA Tesla V100 GPUs. But we have tested that using a smaller batch size (incorperating the linear learning rate scaling) or less GPUs can deliver similar performances. The following command can be used to train our model from scratch:
 ```bash
